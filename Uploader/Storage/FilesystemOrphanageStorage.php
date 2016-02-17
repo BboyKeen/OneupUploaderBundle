@@ -75,11 +75,6 @@ class FilesystemOrphanageStorage extends FilesystemStorage implements OrphanageS
 
     protected function getPath()
     {
-        $id = $this->session->get('oneup_uploader.orphanage.id');
-        if (null !== $id) {
-            return sprintf('%s/%d/%s', $this->session->getId(), $id, $this->type);
-        }
-
         return sprintf('%s/%s', $this->session->getId(), $this->type);
     }
 
